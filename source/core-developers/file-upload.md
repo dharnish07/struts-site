@@ -5,7 +5,7 @@ title: File Upload
 
 # File Upload
 
-The Struts 2 framework provides built\-in support for processing file uploads that conform to [RFC 1867](http://www\.ietf\.org/rfc/rfc1867\.txt)^[http://www\.ietf\.org/rfc/rfc1867\.txt], "Form\-based File Upload in HTML"\. When correctly configured the framework will pass uploaded file(s) into your Action class\. Support for individual and multiple file uploads are provided\. When a file is uploaded it will typically be stored in a temporary directory\. Uploaded files should be processed or moved by your Action class to ensure the data is not lost\. Be aware that servers may have a security policy in place that prohibits you from writing to directories other than the temporary directory and the directories that belong to your web application\.
+The Struts 2 framework provides built\-in support for processing file uploads that conform to [RFC 1867](http://www.ietf.org/rfc/rfc1867\.txt)^[http://www\.ietf\.org/rfc/rfc1867\.txt], "Form\-based File Upload in HTML"\. When correctly configured the framework will pass uploaded file(s) into your Action class\. Support for individual and multiple file uploads are provided\. When a file is uploaded it will typically be stored in a temporary directory\. Uploaded files should be processed or moved by your Action class to ensure the data is not lost\. Be aware that servers may have a security policy in place that prohibits you from writing to directories other than the temporary directory and the directories that belong to your web application\.
 
 
 ## Dependencies
@@ -14,8 +14,8 @@ The Struts 2 framework leverages add\-on libraries to handle the parsing of uplo
 
 |Library|URL|Struts 2\.0\.x|Struts 2\.1\.x|Struts 2\.5\.x|
 |-------|---|--------------|--------------|--------------|
-|Commons\-FileUpload|[http://commons\.apache\.org/fileupload/](http://commons\.apache\.org/fileupload/)|1\.1\.1|1\.2\.1|1\.3\.2|
-|Commons\-IO|[http://commons\.apache\.org/io/](http://commons\.apache\.org/io/)|1\.0|1\.3\.2|2\.4|
+|Commons\-FileUpload|[http://commons\.apache\.org/fileupload/](http://commons.apache.org/fileupload/)|1\.1\.1|1\.2\.1|1\.3\.2|
+|Commons\-IO|[http://commons\.apache\.org/io/](http://commons.apache.org/io/)|1\.0|1\.3\.2|2\.4|
 
 If you are using Maven then you can add these libraries as dependencies in your project's pom\.xml\.
 
@@ -129,7 +129,7 @@ The purpose of each one of these methods is described in the table below\. Notic
 
 ## Uploading Multiple Files
 
-As mentioned in the previous section one technique for uploading multiple files would be to simply have multiple form input elements of type file all with different names\. This would require a number of setter methods that was equal to 3 times the number of files being uploaded\. Another option is to use Arrays or java\.util\.Lists\. The following examples are taken from the Showcase example application that is part sample applications you can download at [http://struts\.apache\.org/download\.cgi](http://struts\.apache\.org/download\.cgi)\. For the Action mapping details see `struts-fileupload.xml` in the sample application download\.
+As mentioned in the previous section one technique for uploading multiple files would be to simply have multiple form input elements of type file all with different names\. This would require a number of setter methods that was equal to 3 times the number of files being uploaded\. Another option is to use Arrays or java\.util\.Lists\. The following examples are taken from the Showcase example application that is part sample applications you can download at [http://struts\.apache\.org/download\.cgi](http://struts.apache.org/download.cgi)\. For the Action mapping details see `struts-fileupload.xml` in the sample application download\.
 
 __Uploading Multiple Files using Arrays__
 
@@ -380,7 +380,7 @@ __Alternate Libraries__
 
 The `struts.multipart.parser` used by the fileUpload interceptor to handle HTTP POST requests, encoded using the MIME\-type multipart/form\-data, can be changed out\. Currently there are two choices, jakarta and pell\. The jakarta parser is a standard part of the Struts 2 framework needing only its required libraries added to a project\. The pell parser uses Jason Pell's multipart parser instead of the Commons\-FileUpload library\. The pell parser is a Struts 2 plugin, for more details see: _pell multipart plugin_ \. There was a third alternative, cos, but it was removed due to licensing incompatibilities\.
 
-As from Struts version 2\.3\.18 a new implementation of `MultiPartRequest` was added \- `JakartaStreamMultiPartRequest`\. It can be used to handle large files, see [WW\-3025](https://issues\.apache\.org/jira/browse/WW\-3025)^[https://issues\.apache\.org/jira/browse/WW\-3025] for more details, but you can simple set
+As from Struts version 2\.3\.18 a new implementation of `MultiPartRequest` was added \- `JakartaStreamMultiPartRequest`\. It can be used to handle large files, see [WW\-3025](https://issues.apache.org/jira/browse/WW-3025)^[https://issues\.apache\.org/jira/browse/WW\-3025] for more details, but you can simple set
 
 
 
@@ -397,7 +397,7 @@ The `struts.multipart.validationRegex` is used to define a RegEx to be used to v
 ^multipart\\/form-data(; boundary=[a-zA-Z0-9]{1,70})?
 ~~~~~~~
 
-Please read [RFC1341](https://www\.w3\.org/Protocols/rfc1341/7\_2\_Multipart\.html)^[https://www\.w3\.org/Protocols/rfc1341/7\_2\_Multipart\.html] the **Multipart section** for more details, existing Struts `Multipart` parsers support only `multipart/form-data` content type\. This option is available since Struts 2\.3\.11\.
+Please read [RFC1341](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)^[https://www\.w3\.org/Protocols/rfc1341/7\_2\_Multipart\.html] the **Multipart section** for more details, existing Struts `Multipart` parsers support only `multipart/form-data` content type\. This option is available since Struts 2\.3\.11\.
 
 __Disabling file upload support__
 
